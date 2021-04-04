@@ -28,3 +28,4 @@ password='' # Enter password
 * Enter the necessary information into the quotation marks.
 * Save the .py file.
 * Now you can run the script through command line/ VSCode/ Spyder etc.
+* Wait until you get the "**COMPLETED!**" message.
