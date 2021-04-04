@@ -5,7 +5,7 @@ Exports saved posts and comments on Reddit to a csv file.
 - ID: Starts from 1 and increments for each saved Post or Comment.
 - Name: Title of the post.
 - Subreddit: Display name of the subreddit.
-- Type: Either #Comment or #Submission.
+- Type: Either #Comment or #Post.
 - URL: Link of the comment or the post.
 - NoSFW: True or False based on the post.
 
