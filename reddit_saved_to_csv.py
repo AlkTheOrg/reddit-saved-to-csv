@@ -1,6 +1,6 @@
 #! python3
 # reddit_saved_to_csv.py - Exports your saved Posts and Comments on Reddit to a csv file.
-import praw, csv
+import praw, csv, codecs
 
 client_id='' # Enter your client ID
 client_secret='' # Enter you client secret
@@ -17,7 +17,7 @@ reddit_home_url = 'https://www.reddit.com'
 
 saved_models = reddit.user.me().saved(limit=None) # models: Comment, Submission
 
-reddit_saved_csv = open('reddit_saved.csv', 'w') # creating our csv file
+reddit_saved_csv = codecs.open('reddit_saved.csv', 'w', 'utf-8') # creating our csv file
 
 # CSV writer for better formatting
 saved_csv_writer = csv.writer(reddit_saved_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
