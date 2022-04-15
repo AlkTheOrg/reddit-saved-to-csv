@@ -18,8 +18,11 @@ parser.add_argument('-id', '--client_id', help='Reddit Client ID', required=True
 parser.add_argument('-s', '--client_secret', help='Reddit Client Secret', required=True)
 parser.add_argument('-f', '--file', help='Name of the csv file to be created.', default='reddit_saved.csv')
 
+# 2-factor authentication one-time-password
+parser.add_argument('-otp', '--otp', help='2-factor authentication one-time-password')
+
 # Post limits
-parser.add_argument('-l', '--limit', help='Number of posts to be exported.', default=None)
+parser.add_argument('-l', '--limit', help='Number of posts to be exported.', type=int, default=None)
 
 args = parser.parse_args()
 
@@ -28,6 +31,10 @@ client_id = args.client_id
 client_secret = args.client_secret
 username = args.username
 password = args.password
+
+# Add OTP if it exists
+if args.otp:
+    password = f'{password}:{args.otp}'
 
 reddit = praw.Reddit(client_id=client_id,
                     client_secret=client_secret,
@@ -69,7 +76,7 @@ def handle(saved_models):
         saved_csv_writer.writerow([str(count), title, subr_name, model_type, url, noSfw])
 
         # Print update
-        print(f'Saved {count}/{len(saved_models)} - {title}')
+        print(f'Saved {count} - {title}')
 
         count += 1
 
