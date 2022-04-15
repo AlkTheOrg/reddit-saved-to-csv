@@ -7,7 +7,10 @@ import codecs
 import praw
 
 # Argparse
-parser = argparse.ArgumentParser(description='Exports your saved posts and comments on Reddit to a csv file.')
+parser = argparse.ArgumentParser(
+    description='Exports your saved posts and comments on Reddit to a csv file.',
+    epilog='You must go to https://www.reddit.com/prefs/apps to obtain your client ID and secret.'
+)
 
 parser.add_argument('-u', '--username', help='Username of the Reddit account.', required=True)
 parser.add_argument('-p', '--password', help='Password of the Reddit account.', required=True)
@@ -21,11 +24,16 @@ parser.add_argument('-l', '--limit', help='Number of posts to be exported.', def
 args = parser.parse_args()
 
 # Get arguments
-reddit = praw.Reddit(client_id=args.client_id,
-                     client_secret=args.client_secret,
-                     user_agent=f'Saved posts scraper by /u/{args.username}',
-                     username=args.username,
-                     password=args.password)
+client_id = args.client_id
+client_secret = args.client_secret
+username = args.username
+password = args.password
+
+reddit = praw.Reddit(client_id=client_id,
+                    client_secret=client_secret,
+                    user_agent=f'Saved posts scraper by /u/{username}',
+                    username=username,
+                    password=password)
 
 reddit_home_url = 'https://www.reddit.com'
 
