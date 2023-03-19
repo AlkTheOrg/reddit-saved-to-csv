@@ -1,3 +1,4 @@
+If you need more than exporting Reddit models into csv, then check out my other project [here](https://github.com/AlkTheOrg/save-my-social).
 # reddit-saved-to-csv
 Exports saved posts and comments on Reddit to a csv file.
 
