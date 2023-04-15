@@ -1,3 +1,6 @@
+
+<a href="https://patreon.com/AlkTheOrg"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DAlkTheOrg%26type%3Dpatrons&style=for-the-badge" /></a>
+
 If you need more than exporting Reddit models into csv, then check out my other project [here](https://github.com/AlkTheOrg/save-my-social).
 # reddit-saved-to-csv
 Exports saved posts and comments on Reddit to a csv file.
